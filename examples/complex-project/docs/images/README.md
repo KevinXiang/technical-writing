@@ -8,6 +8,10 @@ This directory contains architecture diagrams for the E-Commerce Platform.
 
 System architecture diagram showing:
 
+### architecture.drawio
+
+Source file for the architecture diagram (commit alongside .png)
+
 **Components:**
 - API Gateway (Kong) - Routes requests to backend services
 - User Management Service - Authentication, profiles, preferences
@@ -38,6 +42,15 @@ Use [draw.io](https://diagrams.net) to create the diagram:
 3. Add rectangles for services/components
 4. Add cylinders for databases
 5. Add arrows showing relationships
-6. Export as PNG to `architecture.png`
+6. Save the source file as `architecture.drawio`
+7. Export as PNG to `architecture.png`
 
 **Recommended layout:** Horizontal flow with API Gateway on left, services in middle, infrastructure on right.
+
+## See Also
+
+- [Diagrams Guide](../../../../writing-guide/06-diagrams.md) - Comprehensive diagram standards
+
+---
+
+**Last Updated:** 2026-03-23
