@@ -80,9 +80,9 @@ kubectl rollout status deployment/api-gateway -n production
 5. Verify deployment health: `kubectl get pods -n production`
 6. Configure monitoring and alerting
 
-## Scaling
+### Scaling
 
-### Horizontal Scaling
+#### Horizontal Scaling
 
 ```bash
 # Scale specific service
@@ -94,9 +94,9 @@ kubectl autoscale deployment order-service \
   --min=2 --max=10 -n production
 ```
 
-## Monitoring
+### Monitoring
 
-### Health Checks
+#### Health Checks
 
 ```bash
 # Check service health
@@ -106,7 +106,7 @@ curl http://api-gateway/health
 kubectl get pods -n production
 ```
 
-### Logs
+#### Logs
 
 ```bash
 # View service logs
