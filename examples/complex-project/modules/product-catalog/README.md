@@ -131,7 +131,7 @@ pytest
 
 ## Deployment
 
-For deployment instructions, see [Deployment Guide](../../../docs/deployment.md#product-catalog)
+For deployment instructions, see [Deployment Guide](../../../docs/deployment.md)
 
 ## Troubleshooting
 
