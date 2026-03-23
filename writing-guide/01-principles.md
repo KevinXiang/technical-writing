@@ -65,20 +65,27 @@ I usually deploy by running npm run deploy.
 - Temporary workarounds (fix the code instead)
 - Obsolete features (remove them instead)
 
-## The Documentation Pyramid
+## The Documentation Hierarchy
+
+Think of README sections as a hierarchy of importance:
 
 ```
                  │
-      Overview ───┤── 1 page, high level
+      Optional   ───┤── Contributing, License, Changelog
                  │
-      Guides ─────┤── 5-10 pages, how-to
+      Common     ───┤── Features, Architecture, Testing, FAQ, etc.
                  │
-      Reference ──┤── Detailed, lookup
+      Essential  ───┤── Title, Overview, Quick Start, Usage
                  │
 ─────────────────┴─────────────────
 ```
 
-Start with overview documents, add guides as needed, reference material comes last.
+**Build from bottom to top:**
+1. Start with Essential sections (foundation)
+2. Add Common sections based on project needs
+3. Include Optional sections when relevant
+
+This ensures your README has a solid foundation while staying flexible for different project types.
 
 ## Common Pitfalls
 
