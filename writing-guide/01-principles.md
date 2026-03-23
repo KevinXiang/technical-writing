@@ -35,25 +35,29 @@ I usually deploy by running npm run deploy.
 
 ### Must Document:
 
-A complete README should include all 13 sections:
+**Essential Sections (every README):**
+- **Title & Description** - What is this project?
+- **Overview** - Clear explanation of purpose and value
+- **Quick Start** - How to get it running immediately
+- **Usage** - How to use it
 
-1. **Title & Description** - Project name and one-line description
-2. **Overview** - Clear project description (2-3 paragraphs)
-3. **Key Features** - 3-5 bullet points of main capabilities
-4. **Architecture** - System architecture and key components
-5. **Tech Stack** - Technologies and tools used
-6. **Quick Start** - Prerequisites, installation, and running
-7. **Usage** - Basic and advanced usage examples
-8. **Configuration** - Environment variables and settings
-9. **Testing** - How to run tests
-10. **Deployment** - Deployment instructions
-11. **API Documentation** - API reference (if applicable)
-12. **Performance & Scalability** - Performance characteristics
-13. **FAQ** - Common questions and answers
+**Common Sections (include when applicable):**
+- **Key Features** - Main capabilities (3-5 bullet points)
+- **Architecture** - System design and components
+- **Tech Stack** - Technologies and tools used
+- **Configuration** - Environment variables and settings
+- **Testing** - How to run tests
+- **Deployment** - Deployment instructions
+- **API Documentation** - API reference (for libraries/APIs)
+- **Performance & Scalability** - Performance characteristics
+- **FAQ** - Common questions and answers
 
-Additional sections as needed:
+**Optional Sections:**
 - **Contributing** - Contribution guidelines
 - **License** - License information
+- **Changelog** - Version history
+
+**Guideline:** Start with the essential sections, then add common sections based on your project's needs.
 
 ### Don't Document:
 - Implementation details obvious from code
