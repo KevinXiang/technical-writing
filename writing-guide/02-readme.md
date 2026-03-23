@@ -134,23 +134,6 @@ node app.js
 # (Note: you need to set up API keys first)
 ```
 
-## Badges
-
-Use badges sparingly and purposefully:
-
-```markdown
-# ProjectName
-
-![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/build.yml)
-![Version](https://img.shields.io/npm/v/package)
-![License](https://img.shields.io/npm/l/package)
-```
-
-**Only include badges that:**
-- Provide actionable information (build status, version)
-- Are relevant to your users (not just vanity metrics)
-- Stay current (remove broken badges immediately)
-
 ## Screenshots and Demos
 
 For user-facing projects, add a screenshot or GIF after the description:
