@@ -4,13 +4,21 @@ Get your project documented in 5 minutes.
 
 ## Essential README Elements
 
-Every README must have these 5 critical sections:
+Every README should include these 13 sections:
 
-1. **Title & Description** - What is this project?
-2. **Quick Start** - How to get it running immediately
-3. **Usage** - How to use it
-4. **Configuration** - What can be configured
-5. **API/Documentation Links** - Where to learn more
+1. **Title & Description** - Project name and one-line description
+2. **Overview** - Clear and concise project description (2-3 paragraphs)
+3. **Key Features** - 3-5 bullet points of main capabilities
+4. **Architecture** - System architecture and key components
+5. **Tech Stack** - Technologies and tools used
+6. **Quick Start** - Fast path to get running
+7. **Usage** - Basic and advanced usage examples
+8. **Configuration** - Environment variables and settings
+9. **Testing** - How to run tests
+10. **Deployment** - Deployment instructions
+11. **API Documentation** - API reference (if applicable)
+12. **Performance & Scalability** - Performance characteristics
+13. **FAQ** - Common questions and answers
 
 ## Choose Your Template
 
