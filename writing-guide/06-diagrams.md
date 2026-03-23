@@ -1,6 +1,6 @@
-# Creating Diagrams
+# Creating Diagrams with draw.io
 
-When and how to use diagrams effectively.
+When and how to use diagrams effectively in software development.
 
 ## Purpose
 
@@ -13,7 +13,7 @@ Diagrams help when:
 
 ## When to Use Diagrams
 
-### ✅ Use Diagrams For:
+### Use Diagrams For
 
 - System architecture (high-level overview)
 - Data flow through components
@@ -21,62 +21,48 @@ Diagrams help when:
 - Network topology
 - Deployment architecture
 
-### ❌ Don't Use For:
+### Don't Use For
 
 - Simple linear processes (text is clearer)
 - Implementation details (code comments are better)
 - Temporary workarounds (fix the code instead)
 - Obsolete architectures (update the diagram)
 
-## Diagram Tools
+## draw.io Quick Start
 
-### draw.io
+### What is draw.io?
 
-**Best for:** Architecture diagrams, deployment diagrams, component diagrams
+draw.io (diagrams.net) is a free, web-based diagramming tool.
 
-**Advantages:**
-- Free and web-based
-- Export to multiple formats (PNG, SVG, PDF)
-- Version control friendly
-- Large library of shapes
+**Key advantages:**
+- Free and no installation required
+- Export to PNG, SVG, PDF
+- Version control friendly (.drawio is XML)
+- Large library of built-in shapes
 
-**Workflow:**
-1. Go to [diagrams.net](https://diagrams.net)
-2. Create diagram
-3. File → Export as → PNG
-4. Save both .drawio source and PNG to your repo
+### Getting Started
 
-### PlantUML
+1. Go to [diagrams.net](https://diagrams.net) or [drawio.com](https://www.drawio.com)
+2. Click "Create New Diagram"
+3. Select a template or start blank
+4. Drag shapes from left panel to canvas
+5. Double-click shapes to add text
+6. Connect shapes with arrows
+7. File → Export as → PNG
 
-**Best for:** Sequence diagrams, data flow diagrams, structural diagrams
+### Interface Overview
 
-**Advantages:**
-- Text-based (Git friendly)
-- Auto-layout
-- Consistent styling
-- Quick to iterate
-
-**Workflow:**
-1. Write PlantUML code
-2. Generate PNG: `plantuml file.puml`
-3. Commit both .puml and PNG
-
-**Example:**
-```plantuml
-@startuml
-actor User
-participant "API Gateway" as API
-participant "Auth Service" as Auth
-participant "Data Service" as Data
-
-User -> API: Request
-API -> Auth: Validate Token
-Auth --> API: Valid
-API -> Data: Fetch Data
-Data --> API: Data
-API --> User: Response
-@enduml
 ```
++----------------------------------+
+|  File  Edit  View  Arrange        |
++----------------------------------+
+| Shapes  |    Canvas              |
+| General |                        |
+| Arrows  |                        |
+|         |                        |
++----------------------------------+
+```
+
 
 ## Diagram Standards
 
@@ -93,19 +79,12 @@ images/
 
 ### File Format
 
-| Format | Use |
-|--------|-----|
-| **PNG** | Documentation (max width: 800px) |
-| **drawio** | Source for draw.io diagrams |
-| **puml** | Source for PlantUML diagrams |
+| Format | Purpose |
+|--------|---------|
+| .drawio | Source file (always commit) |
+| .png | Documentation (max width: 800px) |
 
-**Always commit source files alongside PNGs.**
-
-### Image Size
-
-- **Max width:** 800px for documentation
-- **DPI:** 72 or 96 (screen resolution)
-- **Theme:** Light theme (works with most doc themes)
+**Always commit both .drawio and .png files.**
 
 ### Markdown Syntax
 
@@ -113,167 +92,124 @@ images/
 ![Alt text](relative/path/to/image.png)
 ```
 
-## Diagram Types
+## Common Diagram Types
 
-### System Architecture Diagram
+### System Architecture & Deployment
 
-Shows major components and their relationships.
+**Use when:** High-level system overview, infrastructure layout
 
-```plantuml
-@startuml
-!include <archimate/Archimate>
+**Key elements:**
+- Rectangles for services/components
+- Cylinders for databases
+- Cloud shapes for external services
+- Arrows for data flow
 
-header System Architecture
+**Steps:**
+1. Identify major components
+2. Group related components (Arrange → Group)
+3. Draw arrows showing relationships
+4. Label each component clearly
+5. Add legend if using colors
 
-rectangle "Frontend" {
-  component [Web App]
-  component [Mobile App]
-}
+**Best practices:**
+- One idea per diagram
+- Consistent shapes for same component types
+- Label arrows with relationship types
 
-rectangle "Backend" {
-  component [API Gateway]
-  component [Auth Service]
-  component [Data Service]
-}
+**Common mistakes:**
+- Too many components (keep under 10)
+- Mixing abstraction levels
+- Unlabeled arrows
 
-database [Database]
+### Sequence & Flow Diagrams
 
-[Web App] --> [API Gateway]
-[Mobile App] --> [API Gateway]
-[API Gateway] --> [Auth Service]
-[API Gateway] --> [Data Service]
-[Data Service] --> [Database]
+**Use when:** API flows, authentication, multi-step processes
 
-@enduml
-```
+**Key elements:**
+- Vertical lifelines for participants
+- Horizontal arrows for messages
+- Diamonds for decisions (flowcharts)
+- Time flows downward
 
-### Data Flow Diagram
+**Steps:**
+1. List all participants (left to right)
+2. Draw vertical lifelines
+3. Add arrows for each message/step
+4. Label each arrow with action
+5. Number steps if complex
 
-Shows how data moves through the system.
+**Best practices:**
+- Participants at top (left-to-right = call order)
+- Label every arrow
+- Show error paths if important
 
-```plantuml
-@startuml
-header Data Flow
+**Common mistakes:**
+- Too many lifelines (keep under 6)
+- Missing return messages
+- Unclear step order
 
-actor "User" as User
-queue "Message Queue" as MQ
-database "Database" as DB
-file "Log File" as Log
+### ER Diagram & Data Model
 
-User -> MQ: Publish Event
-MQ -> DB: Process Event
-DB -> Log: Write Record
+**Use when:** Database schema, data relationships
 
-@enduml
-```
+**Key elements:**
+- Rectangles for entities (tables)
+- Ovals for attributes
+- Lines for relationships
+- Crow's foot for cardinality
 
-### Sequence Diagram
+**Steps:**
+1. List all entities
+2. Identify relationships (1:1, 1:N, N:M)
+3. Draw entities with attributes
+4. Connect with relationship lines
+5. Add cardinality markers
 
-Shows the sequence of operations between components.
+**Best practices:**
+- Show primary keys clearly
+- Indicate foreign key relationships
+- Group related entities
 
-```plantuml
-@startuml
-header User Authentication Flow
+**Common mistakes:**
+- Missing cardinality
+- Too many attributes in one diagram
+- Inconsistent notation
 
-actor User
-participant "Web App" as Web
-participant "API" as API
-participant "Auth DB" as DB
+### C4 Model
 
-User -> Web: Enter credentials
-Web -> API: POST /auth/login
-API -> DB: Validate credentials
-DB --> API: User data
-API --> Web: JWT token
-Web --> User: Redirect to dashboard
+**Use when:** Software architecture documentation
 
-@enduml
-```
+**Levels:**
+1. **Context:** System boundaries + external actors
+2. **Container:** Applications and data stores
+3. **Component:** Internal structure (rarely needed)
 
-### Deployment Diagram
-
-Shows deployment topology.
-
-```plantuml
-@startuml
-header Deployment Architecture
-
-node "Production" {
-  node "Load Balancer" as LB
-  node "App Server 1" as AS1
-  node "App Server 2" as AS2
-  database "Primary DB" as DB1
-  database "Replica DB" as DB2
-
-  LB --> AS1
-  LB --> AS2
-  AS1 --> DB1
-  AS2 --> DB1
-  DB1 --> DB2: Replicate
-}
-
-@enduml
-```
+**Best practices:**
+- Use color to distinguish system types
+- Show key interactions only
+- Reference detailed docs for specifics
 
 ## Best Practices
 
-### ✅ Good Diagram Practices
+### Good Diagram Practices
 
-1. **One idea per diagram**
-   - Don't overcrowd
-   - Use multiple diagrams if needed
+1. **One idea per diagram** - Don't overcrowd
+2. **Consistent styling** - Same shape = same component type
+3. **Clear labels** - Label every component and arrow
+4. **Appropriate detail** - High-level: major components only
 
-2. **Consistent styling**
-   - Same shape = same type of component
-   - Consistent colors and labels
-
-3. **Clear labels**
-   - Label every component
-   - Label relationships (arrows)
-   - Include a legend if needed
-
-4. **Appropriate detail level**
-   - High-level: Major components only
-   - Low-level: Single flow or component
-
-### ❌ Common Mistakes
+### Common Mistakes
 
 ```markdown
-# Bad: Too much information
-[Diagram showing every single function call and data field]
+# Bad: Too much detail
+[Diagram with 50 boxes showing every detail]
 
-# Good: Focused on key concepts
+# Good: Focused diagrams
 [High-level architecture diagram]
 [Separate diagram for specific flow]
 ```
 
-## Example: Documenting with Diagrams
-
-```markdown
-## System Architecture
-
-The system consists of three main layers:
-
-![System Architecture](images/architecture.png)
-
-### Components
-
-- **API Gateway:** Routes and validates requests
-- **Services:** Business logic microservices
-- **Database Layer:** Persistent storage
-
-## Request Flow
-
-![Request Flow](images/request-flow.png)
-
-1. Client sends request to API Gateway
-2. Gateway validates authentication
-3. Request routed to appropriate service
-4. Service queries database
-5. Response returned via Gateway
-```
-
 ## See Also
 
+- [draw.io Examples](https://www.drawio.com/example-diagrams) - Browse by category
 - [Architecture Documentation](03-architecture.md) - Documenting system design
-- [Diagram Sources](../resources/diagram-sources/) - Reusable diagram templates
