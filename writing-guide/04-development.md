@@ -12,21 +12,29 @@ Development guides help:
 
 ## Essential Sections
 
-Every development guide should include these sections:
+Every development guide should include these 7 sections:
+
+1. **Prerequisites** - Required tools and how to install them
+2. **Quick Setup** - Step-by-step guide to get running
+3. **Project Structure** - How the code is organized
+4. **Development Workflow** - Day-to-day commands and operations
+5. **Common Development Tasks** - Frequently used procedures
+6. **Code Style & Conventions** - Naming, commits, branch patterns
+7. **Troubleshooting** - Common problems and solutions
 
 ---
 
-### 1. Prerequisites
+## 1. Prerequisites
 
 What developers need before they start.
 
-**Structure:**
+### Structure
 
 - **Required Tools** - List with specific versions
 - **Verify Your Setup** - Commands to check versions
 - **Install Prerequisites** - OS-specific instructions
 
-**Example:**
+### Example
 
 > ## Prerequisites
 >
@@ -37,7 +45,6 @@ What developers need before they start.
 > - **Git:** 2.30+
 >
 > ### Verify Your Setup
-> Check your versions:
 > ```bash
 > node --version   # Should be v18.x.x or higher
 > npm --version    # Should be 8.x.x or higher
@@ -56,31 +63,25 @@ What developers need before they start.
 > - Download Node.js from [nodejs.org](https://nodejs.org)
 > - Download Docker Desktop from [docker.com](https://www.docker.com/products/docker-desktop)
 > - Git is included with [Git for Windows](https://git-scm.com/download/win)
->
-> **Linux (Ubuntu):**
-> ```bash
-> sudo apt update
-> sudo apt install nodejs npm docker.io git
-> ```
 
-**Key Points:**
+### Key Points
 - Always specify version numbers
 - Provide verification commands
 - Include installation instructions for multiple OSs
 
 ---
 
-### 2. Quick Setup
+## 2. Quick Setup
 
 Fast path to get the project running locally.
 
-**Structure:**
+### Structure
 
 - **Step-by-step numbered instructions**
 - **Explanation for each step** (what it does, why it's needed)
 - **Expected output/verification**
 
-**Example:**
+### Example
 
 > ## Quick Setup
 >
@@ -102,48 +103,32 @@ Fast path to get the project running locally.
 > # Edit .env with your configuration values
 > ```
 >
-> Required environment variables:
-> - `DATABASE_URL` - PostgreSQL connection string
-> - `API_KEY` - Your API key for external services
-> - `PORT` - Server port (default: 3000)
->
 > ### Step 4: Start Development Services
 > ```bash
-> # Start the database (Docker)
 > docker-compose up -d
->
-> # Run database migrations
 > npm run db:migrate
->
-> # Start the development server
 > npm run dev
 > ```
 >
 > The application will be available at http://localhost:3000
->
-> ### Verify Setup
-> ```bash
-> npm run health-check
-> # Expected output: ✅ All systems operational
-> ```
 
-**Key Points:**
+### Key Points
 - Number each step for clarity
 - Explain what commands do
 - Include verification step
 
 ---
 
-### 3. Project Structure
+## 3. Project Structure
 
 Help developers understand how the code is organized.
 
-**Structure:**
+### Structure
 
 - **Directory tree** with inline comments
 - **Key directories explained** with their purposes
 
-**Example:**
+### Example
 
 > ## Project Structure
 >
@@ -151,135 +136,82 @@ Help developers understand how the code is organized.
 > project/
 > ├── src/
 > │   ├── api/              # API endpoints and routes
-> │   │   ├── routes/       # Route definitions
-> │   │   ├── middleware/   # Express middleware
-> │   │   └── controllers/  # Request handlers
 > │   ├── services/         # Business logic layer
-> │   │   ├── user/         # User-related operations
-> │   │   ├── auth/         # Authentication logic
-> │   │   └── email/        # Email service
 > │   ├── models/           # Database models
-> │   ├── utils/            # Utility functions
-> │   └── config/           # Configuration files
+> │   └── utils/            # Utility functions
 > ├── tests/                # Test files
-> │   ├── unit/             # Unit tests
-> │   ├── integration/      # Integration tests
-> │   └── fixtures/         # Test data
 > ├── docs/                 # Additional documentation
-> ├── scripts/              # Utility scripts
-> ├── .env.example          # Environment variables template
-> ├── package.json          # Dependencies and scripts
-> └── README.md             # Project overview
+> └── package.json          # Dependencies and scripts
 > ```
 >
-> ### Key Directories Explained
->
+> ### Key Directories
 > - **`src/api/`** - All HTTP endpoints. Each route has its own file.
-> - **`src/services/`** - Business logic separated from API layer. Reusable across different endpoints.
-> - **`src/models/`** - Database schema and queries using our ORM.
+> - **`src/services/`** - Business logic separated from API layer.
 > - **`tests/`** - Mirrors the `src/` structure for easy navigation.
 
-**Key Points:**
+### Key Points
 - Use inline comments for directory purposes
 - Explain the most important directories
 - Keep tree concise (don't show every file)
 
 ---
 
-### 4. Development Workflow
+## 4. Development Workflow
 
 How to work with the codebase day-to-day.
 
-**Structure:**
+### Structure
 
 - **Running the application** (dev mode, production mode)
 - **Running tests** (all, watch, coverage)
 - **Code quality tools** (lint, format, type-check)
 - **Pre-commit checks** (what runs automatically)
 
-**Example:**
+### Example
 
 > ## Development Workflow
 >
 > ### Running the Application
->
-> **Development Mode (with hot reload):**
 > ```bash
+> # Development mode (with hot reload)
 > npm run dev
-> ```
 >
-> **Production Mode (for testing):**
-> ```bash
-> npm run build
-> npm start
+> # Production mode (for testing)
+> npm run build && npm start
 > ```
->
-> **Watching for Changes:**
-> The dev server automatically restarts when you save files.
 >
 > ### Running Tests
 > ```bash
-> # Run all tests
-> npm test
->
-> # Run tests in watch mode
-> npm run test:watch
->
-> # Run tests with coverage report
-> npm run test:coverage
->
-> # Run only unit tests
-> npm run test:unit
->
-> # Run only integration tests
-> npm run test:integration
+> npm test              # All tests
+> npm run test:watch    # Watch mode
+> npm run test:coverage # Coverage report
 > ```
 >
 > ### Code Quality
 > ```bash
-> # Check code style
-> npm run lint
->
-> # Auto-fix linting issues
-> npm run lint:fix
->
-> # Format code
-> npm run format
->
-> # Run type checking (if TypeScript)
-> npm run type-check
-> ```
->
-> ### Pre-commit Checks
->
-> We use Husky to run checks before each commit:
-> - Linting
-> - Type checking
-> - Unit tests
->
-> To skip checks (not recommended):
-> ```bash
-> git commit --no-verify -m "message"
+> npm run lint      # Check code style
+> npm run lint:fix  # Auto-fix issues
+> npm run format    # Format code
 > ```
 
-**Key Points:**
+### Key Points
 - Group commands by purpose
 - Include watch/coverage variants
 - Explain pre-commit hooks
 
 ---
 
-### 5. Common Development Tasks
+## 5. Common Development Tasks
 
 Step-by-step guides for frequent activities.
 
-**Structure:**
+### Structure
 
 - **Named tasks** with clear headings
 - **Numbered steps** or commands
 - **Explanations** for what each step does
 
-**Example:**
+### Example
 
 > ## Common Tasks
 >
@@ -291,123 +223,89 @@ Step-by-step guides for frequent activities.
 > 4. Add tests in `tests/integration/`
 > 5. Update API documentation
 >
-> ```bash
-> # Example: Add a user profile endpoint
-> npm run generate:endpoint user-profile
-> ```
->
 > ### Running Database Migrations
 > ```bash
-> # Create a new migration
 > npm run db:migrate:create add_user_preferences
->
-> # Run pending migrations
 > npm run db:migrate
->
-> # Rollback last migration
 > npm run db:migrate:rollback
->
-> # View migration status
-> npm run db:migrate:status
 > ```
 >
 > ### Debugging
 > ```bash
-> # Start with debugger enabled
-> npm run debug
->
-> # Debug tests
-> npm run test:debug
+> npm run debug      # Start with debugger
+> npm run test:debug # Debug tests
 > ```
->
-> Then attach your debugger (VS Code, Chrome DevTools, etc.) to the specified port.
 
-**Key Points:**
+### Key Points
 - Include tasks developers do frequently
 - Provide both steps and commands
 - Keep descriptions concise
 
 ---
 
-### 6. Code Style & Conventions
+## 6. Code Style & Conventions
 
 Keep code consistent across the team.
 
-**Structure:**
+### Structure
 
 - **Naming conventions** (files, variables, classes)
 - **Commit message format** with examples
 - **Branch naming** patterns
 - **Pull request guidelines**
 
-**Example:**
+### Example
 
 > ## Code Style & Conventions
 >
 > ### Naming Conventions
->
 > - **Files:** `kebab-case.js` (e.g., `user-service.js`)
 > - **Variables:** `camelCase` (e.g., `userId`)
 > - **Constants:** `UPPER_SNAKE_CASE` (e.g., `API_BASE_URL`)
 > - **Classes:** `PascalCase` (e.g., `UserService`)
-> - **Private properties:** Leading underscore (e.g., `_internalMethod`)
 >
 > ### Commit Messages
 >
-> We follow [Conventional Commits](https://www.conventionalcommits.org/):
+> Follow [Conventional Commits](https://www.conventionalcommits.org/):
 >
 > ```
 > feat: add user authentication
 > fix: resolve login timeout issue
 > docs: update API documentation
-> refactor: simplify user service logic
-> test: add integration tests for checkout
-> chore: update dependencies
 > ```
->
-> **Format:** `type: subject`
->
-> **Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 >
 > ### Branch Naming
->
 > ```
-> feature/description       # New features
-> bugfix/description        # Bug fixes
-> hotfix/description        # Urgent production fixes
-> refactor/description      # Code refactoring
-> docs/description          # Documentation updates
+> feature/description  # New features
+> bugfix/description   # Bug fixes
+> hotfix/description   # Urgent fixes
 > ```
->
-> **Example:** `feature/add-oauth-login`
 >
 > ### Pull Request Guidelines
->
-> 1. **Title:** Use conventional commit format
-> 2. **Description:** Explain what and why, not how
-> 3. **Link issues:** Include `Fixes #123` or `Closes #456`
-> 4. **Tests:** All tests must pass
-> 5. **Review:** At least one approval required
+> 1. Title: Use conventional commit format
+> 2. Description: Explain what and why
+> 3. Link issues: Include `Fixes #123`
+> 4. Tests: All tests must pass
 
-**Key Points:**
+### Key Points
 - Provide concrete examples for each convention
-- Link to external standards (like Conventional Commits)
+- Link to external standards
 - Keep rules simple and memorable
 
 ---
 
-### 7. Troubleshooting
+## 7. Troubleshooting
 
 Solutions to common problems.
 
-**Structure:**
+### Structure
 
 - **Problem/Solution format**
 - **Symptoms** clearly described
 - **OS-specific solutions** when applicable
 - **Getting help** section
 
-**Example:**
+### Example
 
 > ## Troubleshooting
 >
@@ -440,40 +338,17 @@ Solutions to common problems.
 > taskkill /PID <PID> /F
 > ```
 >
-> **Or use a different port:**
-> ```bash
-> PORT=3001 npm run dev
-> ```
->
-> ---
->
 > ### Database Connection Fails
 >
-> **Symptom:** `Connection refused` or `ECONNREFUSED`
+> **Symptom:** `Connection refused`
 >
 > **Solution:**
->
-> 1. Check Docker is running:
-> ```bash
-> docker ps
-> ```
->
-> 2. Verify environment variables in `.env`:
-> ```bash
-> cat .env | grep DATABASE_URL
-> ```
->
-> 3. Check database logs:
-> ```bash
-> docker-compose logs db
-> ```
->
-> 4. Restart database:
-> ```bash
-> docker-compose restart db
-> ```
+> 1. Check Docker is running: `docker ps`
+> 2. Verify `.env` variables
+> 3. Check database logs: `docker-compose logs db`
+> 4. Restart database: `docker-compose restart db`
 
-**Key Points:**
+### Key Points
 - Group by problem type
 - Include clear symptoms
 - Provide step-by-step solutions
