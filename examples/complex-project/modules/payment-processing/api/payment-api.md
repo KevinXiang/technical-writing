@@ -6,9 +6,7 @@ Complete API reference for the Payment Processing module.
 
 All endpoints require authentication. Include JWT token in Authorization header:
 
-```
-Authorization: Bearer <token>
-```
+`Authorization: Bearer <token>`
 
 ## Endpoints
 
@@ -54,6 +52,8 @@ Create a payment intent.
   "metadata": {"cartId": "cart_id"}
 }
 ```
+
+> **Note:** All monetary amounts are specified in cents (smallest currency unit). For example, $65.98 is represented as `6598`.
 
 **Response (201):**
 ```json
@@ -218,11 +218,27 @@ requires_payment_method → requires_confirmation → requires_action → proces
 }
 ```
 
+### 401 Unauthorized
+```json
+{
+  "error": "Unauthorized",
+  "message": "Invalid or missing authentication token"
+}
+```
+
 ### 402 Payment Required
 ```json
 {
   "error": "Payment failed",
   "message": "Card declined"
+}
+```
+
+### 404 Not Found
+```json
+{
+  "error": "Payment not found",
+  "message": "The specified payment ID does not exist"
 }
 ```
 
