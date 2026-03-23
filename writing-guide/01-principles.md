@@ -34,11 +34,26 @@ I usually deploy by running npm run deploy.
 ## When to Document
 
 ### Must Document:
-- Public APIs and interfaces
-- Installation and setup procedures
-- Architecture decisions and trade-offs
-- Configuration options
-- Troubleshooting common issues
+
+A complete README should include all 13 sections:
+
+1. **Title & Description** - Project name and one-line description
+2. **Overview** - Clear project description (2-3 paragraphs)
+3. **Key Features** - 3-5 bullet points of main capabilities
+4. **Architecture** - System architecture and key components
+5. **Tech Stack** - Technologies and tools used
+6. **Quick Start** - Prerequisites, installation, and running
+7. **Usage** - Basic and advanced usage examples
+8. **Configuration** - Environment variables and settings
+9. **Testing** - How to run tests
+10. **Deployment** - Deployment instructions
+11. **API Documentation** - API reference (if applicable)
+12. **Performance & Scalability** - Performance characteristics
+13. **FAQ** - Common questions and answers
+
+Additional sections as needed:
+- **Contributing** - Contribution guidelines
+- **License** - License information
 
 ### Don't Document:
 - Implementation details obvious from code
