@@ -31,7 +31,7 @@ I usually deploy by running npm run deploy.
 3. What do they need to accomplish?
 4. What might confuse them?
 
-## When to Document
+## What to Document
 
 ### Must Document:
 
