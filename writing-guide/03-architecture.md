@@ -99,7 +99,8 @@ Manages all data operations.
 ## Diagram Best Practices
 
 ### ✅ Good Diagram Practices
-
+0. **Drawio example-diagrams**
+   - https://www.drawio.com/example-diagrams
 1. **Show the right level of detail**
    - High-level overview: Show major components only
    - Detailed view: One component at a time
