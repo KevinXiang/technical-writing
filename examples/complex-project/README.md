@@ -78,10 +78,10 @@ The application will be available at http://localhost:3000
 
 | Module | Description | Documentation |
 |--------|-------------|---------------|
-| [User Management](modules/user-management/) | Authentication, profiles, preferences | [Docs →](modules/user-management/) |
-| [Product Catalog](modules/product-catalog/) | Products, categories, search | [Docs →](modules/product-catalog/) |
-| [Order Processing](modules/order-processing/) | Cart, checkout, orders | [Docs →](modules/order-processing/) |
-| [Payment Processing](modules/payment-processing/) | Payment gateways, transactions | [Docs →](modules/payment-processing/) |
+| [User Management](docs/modules/user-management/) | Authentication, profiles, preferences | [Docs →](docs/modules/user-management/) |
+| [Product Catalog](docs/modules/product-catalog/) | Products, categories, search | [Docs →](docs/modules/product-catalog/) |
+| [Order Processing](docs/modules/order-processing/) | Cart, checkout, orders | [Docs →](docs/modules/order-processing/) |
+| [Payment Processing](docs/modules/payment-processing/) | Payment gateways, transactions | [Docs →](docs/modules/payment-processing/) |
 
 ## Development
 
@@ -111,7 +111,7 @@ We use eventual consistency for distributed transactions:
 
 ### Can I add a new payment gateway?
 
-Yes! See [Payment Processing Module](modules/payment-processing/) for details.
+Yes! See [Payment Processing Module](docs/modules/payment-processing/) for details.
 
 ---
 

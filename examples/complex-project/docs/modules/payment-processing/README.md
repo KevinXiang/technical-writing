@@ -124,7 +124,7 @@ npm test
 
 ## Deployment
 
-For deployment instructions, see [Deployment Guide](../../docs/deployment.md)
+For deployment instructions, see [Deployment Guide](../../deployment.md)
 
 ## Troubleshooting
 
@@ -155,6 +155,6 @@ Payment failure event is emitted, order service is notified, and user can retry 
 
 ## See Also
 
-- [Main README](../../README.md)
+- [Main README](../../../README.md)
 - [API Documentation](api/payment-api.md)
-- [Deployment Guide](../../docs/deployment.md)
+- [Deployment Guide](../../deployment.md)

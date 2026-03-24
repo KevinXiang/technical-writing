@@ -126,7 +126,7 @@ npm test
 
 ## Deployment
 
-For deployment instructions, see [Deployment Guide](../../docs/deployment.md)
+For deployment instructions, see [Deployment Guide](../../deployment.md)
 
 ## Troubleshooting
 
@@ -157,6 +157,6 @@ Orders can only be cancelled if in "pending" state. No modifications allowed aft
 
 ## See Also
 
-- [Main README](../../README.md)
+- [Main README](../../../README.md)
 - [API Documentation](api/order-api.md)
-- [Deployment Guide](../../docs/deployment.md)
+- [Deployment Guide](../../deployment.md)
