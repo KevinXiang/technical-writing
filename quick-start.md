@@ -60,12 +60,12 @@ cp resources/templates/*.md your-project/docs/
 | Tool | Best For | File Format |
 |------|----------|-------------|
 | **draw.io** | Architecture, deployment, component diagrams | `.drawio` → `.png` |
-| **PlantUML** | Data flow, sequence, structural diagrams | `.puml` → `.png` |
+| **draw.io** | Data flow, sequence, structural diagrams | `.drawio` → `.png` |
 
 **Workflow:**
-1. Create diagram in draw.io or PlantUML
+1. Create diagram in draw.io
 2. Export as PNG (max width: 800px)
-3. Commit both source (.drawio/.puml) and PNG to your repo
+3. Commit both source (.drawio) and PNG to your repo
 4. Reference in markdown: `![Architecture](docs/images/architecture.png)`
 
 ## Next Steps
