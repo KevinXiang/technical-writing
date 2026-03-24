@@ -11,7 +11,7 @@ Diagrams help when:
 - Documenting deployment topologies
 - Onboarding new developers
 
-## When to Use Diagrams
+## What to Use Diagrams
 
 ### Use Diagrams For
 
@@ -32,7 +32,7 @@ Diagrams help when:
 
 ### What is draw.io?
 
-draw.io (diagrams.net) is a free, web-based diagramming tool.
+https://www.drawio.com/ (diagrams.net) is a free, web-based diagramming tool. You can refer to [example-diagrams](https://www.drawio.com/example-diagrams).
 
 **Key advantages:**
 - Free and no installation required
@@ -92,122 +92,30 @@ images/
 ![Alt text](relative/path/to/image.png)
 ```
 
-## Common Diagram Types
+## Common Diagram Types 
 
-### System Architecture & Deployment
-
+### 1. System Architecture & Deployment
 **Use when:** High-level system overview, infrastructure layout
+- [aws-simple-architecture.drawio](../resources/diagram-sources/aws-simple-architecture.drawio)
+- <img src="../resources/diagram-sources/simple-aws-architecture.png" style="max-width:60%;" />
 
-**Key elements:**
-- Rectangles for services/components
-- Cylinders for databases
-- Cloud shapes for external services
-- Arrows for data flow
-
-**Steps:**
-1. Identify major components
-2. Group related components (Arrange → Group)
-3. Draw arrows showing relationships
-4. Label each component clearly
-5. Add legend if using colors
-
-**Best practices:**
-- One idea per diagram
-- Consistent shapes for same component types
-- Label arrows with relationship types
-
-**Common mistakes:**
-- Too many components (keep under 10)
-- Mixing abstraction levels
-- Unlabeled arrows
-
-### Sequence & Flow Diagrams
-
+### 2. Sequence & Flow Diagrams
 **Use when:** API flows, authentication, multi-step processes
+- [sequence-diagram-examples.drawio](../resources/diagram-sources/sequence-diagram-examples.drawio)
+- <img src="../resources/diagram-sources/uml-sequence-example.png" style="max-width:60%;" />
+- [flowchart.xml](../resources/diagram-sources/flowchart.xml)
+- <img src="../resources/diagram-sources/template-basic-flowchart.png" style="max-width:60%;" />
 
-**Key elements:**
-- Vertical lifelines for participants
-- Horizontal arrows for messages
-- Diamonds for decisions (flowcharts)
-- Time flows downward
-
-**Steps:**
-1. List all participants (left to right)
-2. Draw vertical lifelines
-3. Add arrows for each message/step
-4. Label each arrow with action
-5. Number steps if complex
-
-**Best practices:**
-- Participants at top (left-to-right = call order)
-- Label every arrow
-- Show error paths if important
-
-**Common mistakes:**
-- Too many lifelines (keep under 6)
-- Missing return messages
-- Unclear step order
-
-### ER Diagram & Data Model
-
+### 3. ER Diagram & Data Model
 **Use when:** Database schema, data relationships
+- [er-diagram-example.drawio](../resources/diagram-sources/er-diagram-example.drawio)
+- <img src="../resources/diagram-sources/er-diagram-example.png" style="max-width:60%;" />
 
-**Key elements:**
-- Rectangles for entities (tables)
-- Ovals for attributes
-- Lines for relationships
-- Crow's foot for cardinality
-
-**Steps:**
-1. List all entities
-2. Identify relationships (1:1, 1:N, N:M)
-3. Draw entities with attributes
-4. Connect with relationship lines
-5. Add cardinality markers
-
-**Best practices:**
-- Show primary keys clearly
-- Indicate foreign key relationships
-- Group related entities
-
-**Common mistakes:**
-- Missing cardinality
-- Too many attributes in one diagram
-- Inconsistent notation
-
-### C4 Model
-
+### 4. C4 Model (system context, container, component & class diagrams)
 **Use when:** Software architecture documentation
+- [c4-component.drawio](../resources/diagram-sources/c4-component.drawio)
+- <img src="../resources/diagram-sources/c4-component.png" style="max-width:60%;" />
 
-**Levels:**
-1. **Context:** System boundaries + external actors
-2. **Container:** Applications and data stores
-3. **Component:** Internal structure (rarely needed)
-
-**Best practices:**
-- Use color to distinguish system types
-- Show key interactions only
-- Reference detailed docs for specifics
-
-## Best Practices
-
-### Good Diagram Practices
-
-1. **One idea per diagram** - Don't overcrowd
-2. **Consistent styling** - Same shape = same component type
-3. **Clear labels** - Label every component and arrow
-4. **Appropriate detail** - High-level: major components only
-
-### Common Mistakes
-
-```markdown
-# Bad: Too much detail
-[Diagram with 50 boxes showing every detail]
-
-# Good: Focused diagrams
-[High-level architecture diagram]
-[Separate diagram for specific flow]
-```
 
 ## See Also
 
