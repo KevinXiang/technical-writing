@@ -1,10 +1,13 @@
 # Architecture Documentation
 
 > [Project Name] - System Architecture
+<!-- Tip: This document is for technical audiences. Keep it focused on architecture, not implementation details. -->
 
 ## Overview
 
 This document describes the system architecture of [Project Name], including design principles, components, data flow, and technology decisions.
+
+<!-- Tip: Architecture documents should explain "why" decisions were made, not just "what" was built -->
 
 ## Table of Contents
 
@@ -303,6 +306,8 @@ The system is organized into the following layers:
 - Deployment process: [Description]
 
 ## Design Decisions
+
+<!-- Tip: Document the reasoning behind architectural choices. This helps future maintainers understand the trade-offs. -->
 
 ### [Decision 1: Title]
 

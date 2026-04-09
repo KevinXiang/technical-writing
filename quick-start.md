@@ -2,23 +2,41 @@
 
 Get your project documented in 5 minutes.
 
-## Essential README Elements
+## Core vs Extended Elements
 
-Every README should include these 13 sections:
+Documentation should match your project's needs. Start with the core elements, then add extended sections as your project grows.
 
-1. **Title & Description** - Project name and one-line description
-2. **Overview** - Clear and concise project description (2-3 paragraphs)
-3. **Key Features** - 3-5 bullet points of main capabilities
-4. **Architecture** - System architecture and key components
-5. **Tech Stack** - Technologies and tools used
-6. **Quick Start** - Fast path to get running
-7. **Usage** - Basic and advanced usage examples
-8. **Configuration** - Environment variables and settings
-9. **Testing** - How to run tests
-10. **Deployment** - Deployment instructions
-11. **API Documentation** - API reference (if applicable)
-12. **Performance & Scalability** - Performance characteristics
-13. **FAQ** - Common questions and answers
+### Core Elements (Start Here)
+
+Every README should include these 5 core sections:
+
+| Section | Purpose | Time to Write |
+|---------|---------|---------------|
+| **Title & Description** | Project name and one-line description | 1 min |
+| **Overview** | What it does and why it exists | 3 min |
+| **Quick Start** | Fast path to get running | 5 min |
+| **Usage** | Basic usage examples | 5 min |
+| **Configuration** | Essential settings | 2 min |
+
+**Total time: ~15-20 minutes for a complete basic README**
+
+### Extended Elements (Add as Needed)
+
+Add these sections when they provide value to your users:
+
+| Section | When to Include | Purpose |
+|----------|-----------------|---------|
+| **Key Features** | Product has multiple capabilities | Highlight main selling points |
+| **Architecture** | Complex system or design decisions | Explain how it's built |
+| **Tech Stack** | Project has notable dependencies | List technologies and versions |
+| **Testing** | Contributions accepted | How to run tests |
+| **Deployment** | Deployable by users | Deployment instructions |
+| **API Documentation** | Exposes API or library interface | API reference |
+| **Performance & Scalability** | Performance is a concern | Performance characteristics |
+| **FAQ** | Common questions from users | Pre-answer questions |
+| **Contributing** | Open source or team project | Contribution guidelines |
+| **License** | Publicly shared | License information |
+| **Changelog** | Versioned releases | Version history |
 
 ## Choose Your Template
 
@@ -54,6 +72,53 @@ mkdir -p your-project/docs/{api,images}
 # Copy additional templates as needed
 cp resources/templates/*.md your-project/docs/
 ```
+
+## Minimal README Example
+
+For the quickest start, here's a minimal template:
+
+```markdown
+# [Project Name]
+
+> [One-line description]
+
+## Overview
+
+[2-3 sentences explaining what the project does and its value]
+
+## Quick Start
+
+\`\`\`bash
+# Install
+[install command]
+
+# Run
+[start command]
+\`\`\`
+
+## Usage
+
+[Basic usage example]
+
+\`\`\`[language]
+[code example]
+\`\`\`
+
+## Configuration
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| [VAR_NAME] | [Description] | [default] |
+
+---
+
+**Project:** [Project Name]
+**Documentation Last Updated:** [Date]
+```
+
+**Copy this, replace the placeholders, and you're done in 5 minutes.**
+
+Add more sections from the extended elements list as your project grows.
 
 ## Diagram Tools Quick Reference
 

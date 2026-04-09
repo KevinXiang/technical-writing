@@ -1,10 +1,14 @@
 # Development Guide
 
 > [Project Name] - Developer Guide
+<!-- Tip: Keep this document focused on development workflow. User-facing documentation belongs in README.md -->
 
 ## Overview
 
 This guide provides comprehensive information for developers working on [Project Name], including setup, workflows, coding standards, and best practices.
+
+**Audience:** New developers joining the project, contributors, and maintainers.
+<!-- Tip: Specifying the audience helps set appropriate detail level -->
 
 ## Table of Contents
 
@@ -29,6 +33,8 @@ Before you begin, ensure you have the following installed:
 - **[Database]** - [Version] ([Download link])
 - **[Docker]** - [Version] (for local infrastructure) ([Download link])
 - **[IDE/Editor]** - [Recommended IDE] ([Download link])
+
+<!-- Tip: Providing specific versions helps developers avoid compatibility issues -->
 
 ### Initial Setup
 
@@ -61,6 +67,9 @@ docker-compose up -d
 # 9. Verify installation
 # Open http://localhost:3000 in your browser
 ```
+
+<!-- Tip: Numbered steps make the setup process easier to follow.
+     Consider adding estimated time for each step. -->
 
 ### Verifying Setup
 

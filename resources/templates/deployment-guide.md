@@ -1,10 +1,13 @@
 # Deployment Guide
 
 > [Project Name] - Deployment Documentation
+<!-- Tip: This guide should enable someone unfamiliar with the deployment process to deploy successfully -->
 
 ## Overview
 
 This guide covers the deployment process for [Project Name], including environment setup, deployment procedures, and operational guidelines.
+
+<!-- Tip: Include contact information for deployment-related questions -->
 
 ## Table of Contents
 

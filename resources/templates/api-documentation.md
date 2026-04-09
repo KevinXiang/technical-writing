@@ -1,10 +1,13 @@
 # API Documentation
 
 > [API Name] - [Brief description]
+<!-- Tip: The brief description should help developers quickly understand if this is the API they need -->
 
 ## Overview
 
 [Provide a high-level description of the API, its purpose, and main use cases.]
+
+<!-- Tip: Include the main use cases and any important limitations or quirks -->
 
 ## Base URL
 
