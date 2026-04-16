@@ -71,6 +71,12 @@ Copy-ready templates for common document types: [Templates](resources/templates/
 
 Reusable diagram templates for common architectures: [Diagram Sources](resources/diagram-sources/)
 
+## AI Skills
+
+This project is available as a set of ECC-format AI skills for use with Claude Code and compatible agents.
+
+See [skills/README.md](skills/README.md) for skill documentation and usage.
+
 ## Contributing
 
 To improve these documentation standards:
